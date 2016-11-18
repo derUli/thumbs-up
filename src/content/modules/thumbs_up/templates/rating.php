@@ -24,11 +24,11 @@ if(!$canRate){
 ?>
 <input type="hidden" id="image-dir"  value="<?php echo $imageDir;?>">
 <input type="hidden" id="csrf-token" value="<?php Template::escape(get_csrf_token());?>">
-<div class="thumbs-container" data-id="<?php echo get_ID();?>">
-  <div class="thumbs-button">
+<div class="thumbs-container row" data-id="<?php echo get_ID();?>">
+  <div class="thumbs-button col-md-1">
     <a href="#" class="thumbs-up" data-id="<?php echo get_ID();?>"><img src="<?php echo $upImage;?>" alt="<?php translate("vote_up");?>" title="<?php translate("vote_up");?>"></a>
 <p class="thumb-up"><?php echo $page["thumbs_up"];?></p>  </div>
-  <div class="thumbs-button">
+  <div class="thumbs-button col-md-1">
     <a href="#" class="thumbs-down" data-id="<?php echo get_ID();?>"><img src="<?php echo $downImage;?>" alt="<?php translate("vote_down");?>" title="<?php translate("vote_down");?>">
       </a>
 <p class="thumb-down"><?php echo $page["thumbs_down"];?></p>
