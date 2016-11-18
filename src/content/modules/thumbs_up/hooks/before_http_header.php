@@ -1,5 +1,4 @@
 <?php
-
 $canRate = true;
 
 if(Settings::get("thumbs_up_only_registered_users_can_vote")){
