@@ -2,8 +2,15 @@
 
 $canRate = true;
 
-if(Settings::get("thumbs_up_only_registered_users_can_vote") and !is_logged_in()){
-  $canRate = false;
+if(Settings::get("thumbs_up_only_registered_users_can_vote")){
+  if(!is_logged_in()){
+    $canRate = false;
+  } else {
+       $acl = new ACL();
+       if(!$acl->hasPermission("thumbs_up_rate")){
+          $canRate = false;
+       }
+  }
 }
 
 if($canRate){
