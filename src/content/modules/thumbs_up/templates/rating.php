@@ -24,6 +24,7 @@ if(!$canRate){
   $downImage .= ".png";
 ?>
 <input type="hidden" id="image-dir"  value="<?php echo $imageDir;?>">
+<input type="hidden" id="csrf-token" value="<?php Template::escape(get_csrf_token());?>">
 <div class="thumbs-container" data-id="<?php echo get_ID();?>">
   <div class="thumbs-button">
     <a href="#" class="thumbs-up" data-id="<?php echo get_ID();?>"><img src="<?php echo $upImage;?>" alt="<?php translate("vote_up");?>" title="<?php translate("vote_up");?>"></a>
