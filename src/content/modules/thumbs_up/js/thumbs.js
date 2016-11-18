@@ -16,28 +16,39 @@ function thumbUp(element){
     var token = $("#csrf-token").val();
      var dat = localStorage.getItem("thumb_for_" + id);
      if(dat == null){
-       $.post({
+
+      localStorage.setItem("thumb_for_" + id, "up");
+      updateThumbs(".thumbs-container");
+       $.post(
          "index.php",
          {
-         vote_up : id
+         vote_up : id,
          csrf_token : token
-          },
-
-          localStorage.setItem("thumb_for_" + id, "up");
-          updateThumbs(".thumbs-container");
-          function(data, status){
+       },
+       function(data, status){
               $("p.thumb-up").html(data);
           }
-       });
+       );
      }
 }
 
 function thumbDown(element){
      var id = $(element).data("id");
      var dat = localStorage.getItem("thumb_for_" + id);
+    var token = $("#csrf-token").val();
      if(dat == null){
        localStorage.setItem("thumb_for_" + id, "down");
        updateThumbs(".thumbs-container");
+       $.post(
+         "index.php",
+         {
+         vote_down: id,
+         csrf_token : token
+       },
+       function(data, status){
+              $("p.thumb-down").html(data);
+          }
+       );
      }
 }
 
