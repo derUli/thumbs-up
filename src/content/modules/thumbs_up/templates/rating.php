@@ -1,5 +1,6 @@
 <?php
 $imageDir = getModulePath("thumbs_up") . "pics";
+$scriptFile = getModulePath("thumbs_up") . "js/thumbs.js";
 $canRate = true;
 $page = get_page();
 if(Settings::get("thumbs_up_only_registered_users_can_vote")){
@@ -23,7 +24,7 @@ if(!$canRate){
   $downImage .= ".png";
 ?>
 <input type="hidden" id="image-dir"  value="<?php echo $imageDir;?>">
-<div class="thumbs-container">
+<div class="thumbs-container" data-id="<?php echo get_ID();?>">
   <div class="thumbs-button">
     <?php if($canRate){?><a href="#" class="thumbs-up"><?php }?><img src="<?php echo $upImage;?>" alt="<?php translate("vote_up");?>" title="<?php translate("vote_up");?>"><?php if($canRate){?></a><?php }?>
 <p><?php echo $page["thumbs_up"];?></p>
@@ -34,3 +35,6 @@ if(!$canRate){
 <p><?php echo $page["thumbs_down"];?></p>
   </div>
 </div>
+
+<script type="text/javascript" src="<?php echo $scriptFile;?>">
+</script>
