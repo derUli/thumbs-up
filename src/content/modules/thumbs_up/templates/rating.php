@@ -26,11 +26,11 @@ if(!$canRate){
 <input type="hidden" id="csrf-token" value="<?php Template::escape(get_csrf_token());?>">
 <div class="thumbs-container row" data-id="<?php echo get_ID();?>">
   <div class="thumbs-button col-md-1">
-    <a href="#" class="thumbs-up" data-id="<?php echo get_ID();?>"><img src="<?php echo $upImage;?>" alt="<?php translate("vote_up");?>" title="<?php translate("vote_up");?>"></a>
+    <a href="#" class="thumbs-up" data-id="<?php echo get_ID();?>"><img src="<?php echo $upImage;?>" alt="<?php translate("vote_up");?>" title="<?php translate("vote_up");?>"></a></p>
 <p class="thumb-up text-center"><?php echo $page["thumbs_up"];?></p>  </div>
   <div class="thumbs-button col-md-1">
-    <a href="#" class="thumbs-down" data-id="<?php echo get_ID();?>"><img src="<?php echo $downImage;?>" alt="<?php translate("vote_down");?>" title="<?php translate("vote_down");?>">
-      </a>
+    <p><a href="#" class="thumbs-down" data-id="<?php echo get_ID();?>"><img src="<?php echo $downImage;?>" alt="<?php translate("vote_down");?>" title="<?php translate("vote_down");?>">
+    </a></p>
 <p class="thumb-down text-center"><?php echo $page["thumbs_down"];?></p>
   </div>
 </div>
