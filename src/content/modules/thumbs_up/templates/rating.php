@@ -13,7 +13,6 @@ if(Settings::get("thumbs_up_only_registered_users_can_vote")){
        }
   }
 }
-
   $upImage = $imageDir . "/up";
   $downImage = $imageDir . "/down";
 if(!$canRate){
@@ -28,12 +27,11 @@ if(!$canRate){
 <div class="thumbs-container" data-id="<?php echo get_ID();?>">
   <div class="thumbs-button">
     <a href="#" class="thumbs-up" data-id="<?php echo get_ID();?>"><img src="<?php echo $upImage;?>" alt="<?php translate("vote_up");?>" title="<?php translate("vote_up");?>"></a>
-<p><?php echo $page["thumbs_up"];?></p>
-  </div>
+<p class="thumb-up"><?php echo $page["thumbs_up"];?></p>  </div>
   <div class="thumbs-button">
     <a href="#" class="thumbs-down" data-id="<?php echo get_ID();?>"><img src="<?php echo $downImage;?>" alt="<?php translate("vote_down");?>" title="<?php translate("vote_down");?>">
       </a>
-<p><?php echo $page["thumbs_down"];?></p>
+<p class="thumb-down"><?php echo $page["thumbs_down"];?></p>
   </div>
 </div>
 

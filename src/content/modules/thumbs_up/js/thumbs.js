@@ -13,10 +13,22 @@ function updateThumbs(element){
 
 function thumbUp(element){
      var id = $(element).data("id");
+    var token = $("#csrf-token").val();
      var dat = localStorage.getItem("thumb_for_" + id);
      if(dat == null){
-       localStorage.setItem("thumb_for_" + id, "up");
-       updateThumbs(".thumbs-container");
+       $.post({
+         "index.php",
+         {
+         vote_up : id
+         csrf_token : token
+          },
+
+          localStorage.setItem("thumb_for_" + id, "up");
+          updateThumbs(".thumbs-container");
+          function(data, status){
+              $("p.thumb-up").html(data);
+          }
+       });
      }
 }
 
