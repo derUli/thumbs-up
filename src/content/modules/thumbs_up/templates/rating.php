@@ -26,12 +26,12 @@ if(!$canRate){
 <input type="hidden" id="image-dir"  value="<?php echo $imageDir;?>">
 <div class="thumbs-container" data-id="<?php echo get_ID();?>">
   <div class="thumbs-button">
-    <?php if($canRate){?><a href="#" class="thumbs-up"><?php }?><img src="<?php echo $upImage;?>" alt="<?php translate("vote_up");?>" title="<?php translate("vote_up");?>"><?php if($canRate){?></a><?php }?>
+    <a href="#" class="thumbs-up"><?php }?><img src="<?php echo $upImage;?>" alt="<?php translate("vote_up");?>" title="<?php translate("vote_up");?>"></a>
 <p><?php echo $page["thumbs_up"];?></p>
   </div>
   <div class="thumbs-button">
-      <?php if($canRate){?><a href="#" class="thumbs-down"><?php }?><img src="<?php echo $downImage;?>" alt="<?php translate("vote_down");?>" title="<?php translate("vote_down");?>">
-        <?php if($canRate){?></a><?php }?>
+    <a href="#" class="thumbs-down"><?php }?><img src="<?php echo $downImage;?>" alt="<?php translate("vote_down");?>" title="<?php translate("vote_down");?>">
+      </a>
 <p><?php echo $page["thumbs_down"];?></p>
   </div>
 </div>
