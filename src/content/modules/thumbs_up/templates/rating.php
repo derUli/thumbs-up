@@ -29,7 +29,6 @@ if(!$canRate){
 <p><?php echo $page["thumbs_up"];?></p>
   </div>
   <div class="thumbs-button">
-
       <?php if($canRate){?><a href="#" class="thumbs-down"><?php }?><img src="<?php echo $downImage;?>" alt="<?php translate("vote_down");?>" title="<?php translate("vote_down");?>">
         <?php if($canRate){?></a><?php }?>
 <p><?php echo $page["thumbs_down"];?></p>
