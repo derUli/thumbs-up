@@ -2,7 +2,6 @@ function updateThumbs(element) {
 	var id = $(element).data("id");
 	var dat = localStorage.getItem("thumb_for_" + id);
 	var imgdir = $("#image-dir").val();
-	var canRate = $("#can-rate").val();
 	if (dat == "up") {
 		$(".thumbs-up img").first().attr("src", imgdir + "/up-voted.png");
 		$(".thumbs-down img").first().attr("src", imgdir + "/down.png");
@@ -14,11 +13,6 @@ function updateThumbs(element) {
 		$('.thumbs-up').css('cursor', 'pointer');
 		$('.thumbs-down').css('cursor', 'pointer');
 	} else {
-		$('.thumbs-up').css('cursor', 'default');
-		$('.thumbs-down').css('cursor', 'default');
-	}
-
-	if (canRate == "false") {
 		$('.thumbs-up').css('cursor', 'default');
 		$('.thumbs-down').css('cursor', 'default');
 	}
@@ -58,12 +52,22 @@ function thumbDown(element) {
 }
 
 $(document).ready(function() {
-	updateThumbs(".thumbs-container");
-	$("a.thumbs-up").click(function() {
-		thumbUp(this);
-	});
+	var canRate = $("#can-rate").val();
+	if (canRate == "true") {
+		updateThumbs(".thumbs-container");
 
-	$("a.thumbs-down").click(function() {
-		thumbDown(this);
-	});
+		$("a.thumbs-up").click(function(event) {
+			event.preventDefault();
+			thumbUp(this);
+		});
+
+		$("a.thumbs-down").click(function() {
+			event.preventDefault();
+			thumbDown(this);
+		});
+	} else {
+		$('.thumbs-up').css('cursor', 'default');
+		$('.thumbs-down').css('cursor', 'default');
+
+	}
 })
