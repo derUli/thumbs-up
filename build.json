@@ -1,0 +1,7 @@
+{
+   "id" : "thumbs_up",
+   "version" : "0.9.0",
+   "description" : "Thumbs up and Thumbs Down Rating for Articles",
+   "categories" : ["social_media", "community"],
+   "compatible_from" : "2017.1"
+}
