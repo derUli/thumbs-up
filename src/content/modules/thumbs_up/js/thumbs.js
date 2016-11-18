@@ -9,6 +9,13 @@ function updateThumbs(element){
          $(".thumbs-up img").first().attr("src", imgdir + "/up.png");
          $(".thumbs-down img").first().attr("src", imgdir + "/down-voted.png");
    }
+   if(dat == null){
+     $('.thumbs-up').css('cursor', 'pointer');
+     $('.thumbs-down').css('cursor', 'pointer');
+   } else {
+     $('.thumbs-up').css('cursor', 'default');
+     $('.thumbs-down').css('cursor', 'default');
+   }
 }
 
 function thumbUp(element){
