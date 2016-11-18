@@ -14,6 +14,7 @@ if(Settings::get("thumbs_up_only_registered_users_can_vote")){
 }
 
 ?>
+<input type="hidden" id="image-dir"  value="<?php echo $imageDir;">
 <div class="thumbs-container">
   <div class="thumbs-button">
     <?php if($canRate){?><a href="#" class="thumbs-up"><?php }?><img src="<?php echo $imageDir;?>/up.png" alt="<?php translate("vote_up");?>" title="<?php translate("vote_up");?>"><?php if($canRate){?></a><?php }?>
