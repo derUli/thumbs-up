@@ -1,4 +1,4 @@
 <?php
-function thumbs_up_render(){
+function thumbs_up_render() {
 	return "";
 }
