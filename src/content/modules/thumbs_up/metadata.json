@@ -1,5 +1,5 @@
 {
-	"version" : "0.9.0",
+	"version" : "1.0",
 	"embed" : false,
 	"custom_acl" : ["thumbs_up_rate", "thumbs_up_settings"],
 	"admin_permission" : "thumbs_up_settings"

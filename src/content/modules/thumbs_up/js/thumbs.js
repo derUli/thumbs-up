@@ -59,11 +59,14 @@ function thumbDown(element) {
 
 $(document).ready(function() {
 	updateThumbs(".thumbs-container");
-	$("a.thumbs-up").click(function() {
+	$("a.thumbs-up").click(function(event) {
+		event.preventDefault();
 		thumbUp(this);
 	});
 
-	$("a.thumbs-down").click(function() {
+	$("a.thumbs-down").click(function(event) {
+		event.preventDefault();
 		thumbDown(this);
 	});
 })
+
