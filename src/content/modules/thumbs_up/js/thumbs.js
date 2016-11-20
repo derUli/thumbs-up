@@ -68,6 +68,5 @@ $(document).ready(function() {
 	} else {
 		$('.thumbs-up').css('cursor', 'default');
 		$('.thumbs-down').css('cursor', 'default');
-
 	}
 })
