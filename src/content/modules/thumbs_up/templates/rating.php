@@ -1,23 +1,23 @@
 <?php
-$imageDir = getModulePath ( "thumbs_up" ) . "pics";
-$scriptFile = getModulePath ( "thumbs_up" ) . "js/thumbs.js";
+$imageDir = getModulePath("thumbs_up") . "pics";
+$scriptFile = getModulePath("thumbs_up") . "js/thumbs.js";
 $canRate = true;
-$page = get_page ();
-if (Settings::get ( "thumbs_up_only_registered_users_can_vote" )) {
-	if (! is_logged_in ()) {
-		$canRate = false;
-	} else {
-		$acl = new ACL ();
-		if (! $acl->hasPermission ( "thumbs_up_rate" )) {
-			$canRate = false;
-		}
-	}
+$page = get_page();
+if (Settings::get("thumbs_up_only_registered_users_can_vote")) {
+    if (! is_logged_in()) {
+        $canRate = false;
+    } else {
+        $acl = new ACL();
+        if (! $acl->hasPermission("thumbs_up_rate")) {
+            $canRate = false;
+        }
+    }
 }
 $upImage = $imageDir . "/up";
 $downImage = $imageDir . "/down";
 if (! $canRate) {
-	$upImage .= "-disabled";
-	$downImage .= "-disabled";
+    $upImage .= "-disabled";
+    $downImage .= "-disabled";
 }
 $upImage .= ".png";
 $downImage .= ".png";

@@ -1,2 +1,2 @@
 <?php
-echo Template::executeModuleTemplate ( "thumbs_up", "rating" );
+echo Template::executeModuleTemplate("thumbs_up", "rating");
